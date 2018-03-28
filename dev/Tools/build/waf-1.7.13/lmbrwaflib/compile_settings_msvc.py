@@ -99,6 +99,7 @@ def load_msvc_common_settings(conf):
         '/nologo',      # Suppress Copyright and version number message
         '/W3',          # Warning Level 3
         '/WX',          # Treat Warnings as Errors
+		'/wd4819',
         '/MP',          # Allow Multicore compilation
         '/Gy',          # Enable Function-Level Linking
         '/GF',          # Enable string pooling
