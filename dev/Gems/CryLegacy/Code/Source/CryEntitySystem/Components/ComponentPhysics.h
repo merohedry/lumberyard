@@ -137,6 +137,7 @@ protected:
     void PhysicalizeSoft(SEntityPhysicalizeParams& params);
     void AttachSoftVtx(IRenderMesh* pRM, IPhysicalEntity* pAttachToEntity, int nAttachToPart);
     void PhysicalizeArea(SEntityPhysicalizeParams& params);
+    void PhysicalizeGolfBall(SEntityPhysicalizeParams& params);
 #if defined(USE_GEOM_CACHES)
     bool PhysicalizeGeomCache(SEntityPhysicalizeParams& params);
 #endif

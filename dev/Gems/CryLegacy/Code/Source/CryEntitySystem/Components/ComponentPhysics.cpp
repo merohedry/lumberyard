@@ -1110,6 +1110,10 @@ void CComponentPhysics::Physicalize(SEntityPhysicalizeParams& params)
     case PE_AREA:
         PhysicalizeArea(params);
         break;
+
+    case PE_BALL:
+        PhysicalizeGolfBall(params);
+        break;
     case PE_NONE:
         SetFlags(GetFlags() & ~FLAG_POS_EXTRAPOLATED);
         DestroyPhysicalEntity();
@@ -1938,6 +1942,11 @@ void CComponentPhysics::PhysicalizeArea(SEntityPhysicalizeParams& params)
         fd.iForeignFlags = PFF_OUTDOOR_AREA;
         m_pPhysicalEntity->SetParams(&fd);
     }
+}
+
+void CComponentPhysics::PhysicalizeGolfBall(SEntityPhysicalizeParams& params)
+{
+
 }
 
 /////////////////////////////////////////////////////////////////////////
