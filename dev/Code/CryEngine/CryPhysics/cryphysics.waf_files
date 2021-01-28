@@ -11,6 +11,8 @@
         ],
         "Dynamics":
         [
+			"BallPhysicalEntity.cpp",
+			"BallPhysicalEntity.h",
             "waterman.cpp",
             "wheeledvehicleentity.cpp",
             "articulatedentity.cpp",

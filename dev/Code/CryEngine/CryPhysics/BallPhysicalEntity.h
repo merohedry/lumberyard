@@ -1,5 +1,6 @@
 #pragma once
 
+#include "rigidentity.h"
 
 class CBallPhysicalEntity : public CRigidEntity {
 
