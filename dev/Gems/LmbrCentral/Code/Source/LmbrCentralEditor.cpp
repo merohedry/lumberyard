@@ -30,6 +30,7 @@
 #include "Audio/EditorAudioTriggerComponent.h"
 #include "Physics/EditorConstraintComponent.h"
 #include "Physics/EditorRigidPhysicsComponent.h"
+#include "Physics/EditorBallPhysicsComponent.h"
 #include "Physics/EditorStaticPhysicsComponent.h"
 #include "Physics/EditorWindVolumeComponent.h"
 #include "Physics/EditorForceVolumeComponent.h"
@@ -99,6 +100,7 @@ namespace LmbrCentral
 #if ENABLE_CRY_PHYSICS
             EditorConstraintComponent::CreateDescriptor(),
             EditorRigidPhysicsComponent::CreateDescriptor(),
+            EditorBallPhysicsComponent::CreateDescriptor(),
             EditorStaticPhysicsComponent::CreateDescriptor(),
             EditorWindVolumeComponent::CreateDescriptor(),
             EditorForceVolumeComponent::CreateDescriptor(),

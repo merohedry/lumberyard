@@ -70,6 +70,8 @@
             "Source/Physics/EditorConstraintComponent.cpp",
             "Source/Physics/EditorPhysicsComponent.h",
             "Source/Physics/EditorPhysicsComponent.cpp",
+            "Source/Physics/EditorBallPhysicsComponent.h",
+            "Source/Physics/EditorBallPhysicsComponent.cpp",			
             "Source/Physics/EditorRigidPhysicsComponent.h",
             "Source/Physics/EditorRigidPhysicsComponent.cpp",
             "Source/Physics/EditorStaticPhysicsComponent.h",

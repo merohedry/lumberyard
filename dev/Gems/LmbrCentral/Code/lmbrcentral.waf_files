@@ -190,6 +190,8 @@
             "Source/Physics/RagdollComponent.cpp",
             "Source/Physics/RigidPhysicsComponent.h",
             "Source/Physics/RigidPhysicsComponent.cpp",
+			"Source/Physics/BallPhysicsComponent.h",
+            "Source/Physics/BallPhysicsComponent.cpp",
             "Source/Physics/StaticPhysicsComponent.h",
             "Source/Physics/StaticPhysicsComponent.cpp",
             "Source/Physics/WindVolume.h",

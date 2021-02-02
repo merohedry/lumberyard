@@ -305,6 +305,9 @@ namespace AzFramework
     /// The type ID of RigidPhysicsComponent.
     static const AZ::Uuid RigidPhysicsComponentTypeId = "{BF2ED241-6364-4D78-8008-498EF2A2659C}";
 
+	/// The type ID of RigidPhysicsComponent.
+	static const AZ::Uuid BallPhysicsComponentTypeId = "{3FEB1F7B-E8B0-4F34-8EAC-208781C57559}";
+
     /// The type ID of EditorRigidPhysicsComponent.
     static const AZ::Uuid EditorRigidPhysicsComponentTypeId = "{BD17E257-BADB-45D7-A8BA-16D6B0BE0881}";
 
