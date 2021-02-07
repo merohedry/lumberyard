@@ -11,10 +11,10 @@ namespace LmbrCentral
     // * Configuration data for EditorRigidPhysicsComponent.
     // */
     struct EditorBallPhysicsConfig
-        : public AzFramework::RigidPhysicsConfig
+        : public AzFramework::BallPhysicsConfig
     {
         AZ_CLASS_ALLOCATOR(EditorBallPhysicsConfig, AZ::SystemAllocator, 0);
-        AZ_RTTI(EditorBallPhysicsConfig, "{DAED9BF0-A10F-4DC6-9A36-648D0158029F}", AzFramework::RigidPhysicsConfig);
+        AZ_RTTI(EditorBallPhysicsConfig, "{DAED9BF0-A10F-4DC6-9A36-648D0158029F}", AzFramework::BallPhysicsConfig);
         static void Reflect(AZ::ReflectContext* context);
 
         // currently, there's no difference between EditorBallPhysicsConfig and its base class.

@@ -396,6 +396,17 @@ namespace AzFramework
         bool m_reportStateUpdates = false;
     };
 
+    /// Configuration data for BallPhysicsComponent.
+    class BallPhysicsConfig
+        : public AZ::ComponentConfig
+    {
+    public:
+        AZ_CLASS_ALLOCATOR(BallPhysicsConfig, AZ::SystemAllocator, 0);
+        AZ_RTTI(BallPhysicsConfig, "{9ACA32D2-5510-49D9-ADC2-C9C84C57F0B2}", AZ::ComponentConfig);
+
+        static void Reflect(AZ::ReflectContext* context);
+    };
+
     /// Configuration data for StaticPhysicsComponent.
     class StaticPhysicsConfig
         : public AZ::ComponentConfig

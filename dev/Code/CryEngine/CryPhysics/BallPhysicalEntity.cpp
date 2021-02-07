@@ -23,11 +23,10 @@
 #include "BallPhysicalEntity.h"
 
 
-CBallPhysicalEntity::CBallPhysicalEntity(CPhysicalWorld* pworld) : CRigidEntity(pworld)
+CBallPhysicalEntity::CBallPhysicalEntity(CPhysicalWorld* pworld, IGeneralMemoryHeap* pHeap /*= NULL*/) : CRigidEntity(pworld, pHeap)
 {
 
 }
-
 
 CBallPhysicalEntity::~CBallPhysicalEntity()
 {

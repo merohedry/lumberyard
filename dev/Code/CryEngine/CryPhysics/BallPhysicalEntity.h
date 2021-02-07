@@ -3,12 +3,10 @@
 #include "rigidentity.h"
 
 class CBallPhysicalEntity : public CRigidEntity {
-
 public:
-	CBallPhysicalEntity(CPhysicalWorld* pworld);
-	virtual ~CBallPhysicalEntity();
-
-
+    explicit CBallPhysicalEntity(CPhysicalWorld* pworld, IGeneralMemoryHeap* pHeap = NULL);
+    virtual ~CBallPhysicalEntity();
+    virtual pe_type GetType() const { return PE_BALL; }
 
 
 };

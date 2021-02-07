@@ -9,13 +9,34 @@
 #include <AzCore/RTTI/BehaviorContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 
+
+namespace AzFramework
+{
+    void BallPhysicsConfig::Reflect(AZ::ReflectContext* context)
+    {
+        AZ::SerializeContext* serializeContext = azrtti_cast<AZ::SerializeContext*>(context);
+        if (serializeContext)
+        {
+            serializeContext->Class<AzFramework::BallPhysicsConfig>()
+                ->Version(1);
+        }
+
+        if (auto behaviorContext = azrtti_cast<AZ::BehaviorContext*>(context))
+        {
+			behaviorContext->Class<AzFramework::BallPhysicsConfig>();
+        }
+    }
+}
+
+
+
 namespace LmbrCentral
 {
 	void BallPhysicsComponent::Reflect(AZ::ReflectContext* context)
 	{
 		//PhysicsComponent::Reflect(context);
 
-		//AzFramework::RigidPhysicsConfig::Reflect(context);
+		AzFramework::BallPhysicsConfig::Reflect(context);
 
 		if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
 		{

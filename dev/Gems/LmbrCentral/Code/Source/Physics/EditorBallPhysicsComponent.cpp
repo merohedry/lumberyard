@@ -13,83 +13,15 @@ namespace LmbrCentral
 		auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context);
 		if (serializeContext)
 		{
-			serializeContext->Class<EditorBallPhysicsConfig, AzFramework::RigidPhysicsConfig>()
+			serializeContext->Class<EditorBallPhysicsConfig, AzFramework::BallPhysicsConfig>()
 				->Version(2)
 				;
 
 			AZ::EditContext* editContext = serializeContext->GetEditContext();
 			if (editContext)
 			{
-				editContext->Class<AzFramework::RigidPhysicsConfig>(
-					"Rigid Body Physics Configuration", "")
-					->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-					->Attribute(AZ::Edit::Attributes::Category, "Physics (Legacy)")
-					->Attribute(AZ::Edit::Attributes::Visibility, AZ::Edit::PropertyVisibility::ShowChildrenOnly)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_enabledInitially,
-						"Enabled initially", "Whether the entity is initially enabled in the physics simulation.")
-
-					->DataElement(AZ::Edit::UIHandlers::ComboBox, &AzFramework::RigidPhysicsConfig::m_specifyMassOrDensity,
-						"Specify mass or density", "Whether total mass is specified, or calculated at spawn time based on density and volume")
-					->Attribute(AZ::Edit::Attributes::ChangeNotify, AZ::Edit::PropertyRefreshLevels::EntireTree)
-					->EnumAttribute(AzFramework::RigidPhysicsConfig::MassOrDensity::Mass, "Mass")
-					->EnumAttribute(AzFramework::RigidPhysicsConfig::MassOrDensity::Density, "Density")
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_mass,
-						"Total mass (kg)", "Total mass of entity, in kg")
-					->Attribute(AZ::Edit::Attributes::Visibility, &AzFramework::RigidPhysicsConfig::UseMass)
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_density,
-						"Density (kg / cubic meter)", "Mass (kg) per cubic meter of the mesh's volume. Total mass of entity is calculated at spawn. (Water's density is 1000)")
-					->Attribute(AZ::Edit::Attributes::Visibility, &AzFramework::RigidPhysicsConfig::UseDensity)
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_atRestInitially,
-						"At rest initially", "True: Entity remains at rest until agitated.\nFalse: Entity falls after spawn.")
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_enableCollisionResponse,
-						"Collision response", "True: Entity's simulation is affected normally as a result of collisions with other bodies.\nFalse: Collision events are reported, but the entity's simulation is not affected by collisions.")
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_interactsWithTriggers,
-						"Interacts with triggers", "Indicates whether or not this entity can interact with proximity triggers.")
-
-					->DataElement(AZ::Edit::UIHandlers::Default, &AzFramework::RigidPhysicsConfig::m_recordCollisions, "Record collisions", "Whether or not to record and report collisions with this entity")
-					->Attribute(AZ::Edit::Attributes::ChangeNotify, AZ::Edit::PropertyRefreshLevels::EntireTree)
-
-					->DataElement(AZ::Edit::UIHandlers::Default, &AzFramework::RigidPhysicsConfig::m_maxRecordedCollisions, "Number of collisions", "Maximum number of collisions to record and report per frame")
-					->Attribute(AZ::Edit::Attributes::Visibility, &AzFramework::RigidPhysicsConfig::m_recordCollisions)
-					->Attribute(AZ::Edit::Attributes::Min, 0)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_reportStateUpdates,
-						"Report state updates", "Indicates whether or not this entity should report external state changes, such as when the transform is modified directly.")
-
-					->ClassElement(AZ::Edit::ClassElements::Group, "Simulation")
-					->Attribute(AZ::Edit::Attributes::AutoExpand, false)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_simulationDamping, "Damping", "Uniform damping value applied to object's movement.")
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-					->Attribute(AZ::Edit::Attributes::Step, 0.1f)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_simulationMinEnergy, "Minimum energy", "The energy threshold under which the object will go to sleep.")
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-					->Attribute(AZ::Edit::Attributes::Step, 0.01f)
-
-					->ClassElement(AZ::Edit::ClassElements::Group, "Buoyancy")
-					->Attribute(AZ::Edit::Attributes::AutoExpand, false)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_buoyancyDamping, "Water damping", "Uniform damping value applied while in water.")
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-					->Attribute(AZ::Edit::Attributes::Step, 0.1f)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_buoyancyDensity, "Water density", "Water density strength.")
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-					->Attribute(AZ::Edit::Attributes::Step, 0.1f)
-
-					->DataElement(0, &AzFramework::RigidPhysicsConfig::m_buoyancyResistance, "Water resistance", "Water resistance strength.")
-					->Attribute(AZ::Edit::Attributes::Min, 0.f)
-					->Attribute(AZ::Edit::Attributes::Step, 0.1f)
-					;
+				editContext->Class<AzFramework::BallPhysicsConfig>(
+					"Ball Physics Configuration", "");
 			}
 		}
 	}

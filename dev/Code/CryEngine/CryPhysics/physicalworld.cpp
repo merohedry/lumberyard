@@ -35,6 +35,7 @@
 #include "physicalplaceholder.h"
 #include "physicalentity.h"
 #include "rigidentity.h"
+#include "BallPhysicalEntity.h"
 #include "particleentity.h"
 #include "livingentity.h"
 #include "wheeledvehicleentity.h"
@@ -1690,6 +1691,9 @@ IPhysicalEntity* CPhysicalWorld::CreatePhysicalEntity(pe_type type, float lifeTi
         break;
     case PE_RIGID:
         res = CPhysicalEntity::Create<CRigidEntity>(this, pHeap);
+        break;
+    case PE_BALL:
+        res = CPhysicalEntity::Create<CBallPhysicalEntity>(this, pHeap);
         break;
     case PE_LIVING:
         res = CPhysicalEntity::Create<CLivingEntity>(this, pHeap);

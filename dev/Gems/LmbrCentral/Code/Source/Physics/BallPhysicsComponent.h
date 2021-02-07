@@ -30,7 +30,7 @@ namespace LmbrCentral
 		// PhysicsComponent
 		//void ConfigurePhysicalEntity() override;
 		//void ConfigureCollisionGeometry() override;
-		pe_type GetPhysicsType() const override { return PE_RIGID; }
+		pe_type GetPhysicsType() const override { return PE_BALL; }
 		//bool CanInteractWithProximityTriggers() const override { return m_configuration.m_interactsWithTriggers; }
 		//bool IsEnabledInitially() const override { return m_configuration.m_enabledInitially; }
 		////////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ namespace LmbrCentral
 		//bool WriteOutConfig(AZ::ComponentConfig * outBaseConfig) const override;
 		////////////////////////////////////////////////////////////////////////
 
-		AzFramework::RigidPhysicsConfig m_configuration;
+		AzFramework::BallPhysicsConfig m_configuration;
 
 
 
